@@ -1,1 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+:root {
+    font-size: 62.5%;
+
+    --col-prim: #333;
+    --col-prim-lg: #555;
+    --col-prim-dk: #111;
+    --col-sec: goldenrod;
+    --col-sec-lg:  gold;
+    --col-sec-dk: darkgoldenrod;
+    --col-ter: orangered;
+    --col-ter-lg: red;
+    --col-ter-dk: darkred;
+    --col-grey: #ccc;
+    --col-grey-lg: #eee;
+    --col-grey-dk: #aaa; 
+
+    --trans-dur: 0.3s;
+    --font-size-title: cal(2rem + 2vw);
+    --padding-sec: 8vh 3vw;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.7;
+    background-color: var(--col-grey-lg);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 
+        [container-start] 1fr [center-start] repeat (
+            10,
+            [col-start] minmax(min-content, 11rem) [col-end]
+        )
+        [center-end] 1fr [container-end];
+    grid-template-rows: 100vh repeat(8, min-content);
+}
+
+a:link,
+a:visited {
+    color: var(--col-grey-lg);
+    text-decoration: none;
+    font-size: calc(0.5rem + 1vw);
+    padding: 1rem 2rem;
+    border-radius: 0.3rem;
+    position: relative;
+    transition: all var(--trans-dur) cubic-bezier(1, 0, 0, 1);
+    z-index: 1;
+}
+
+p {
+    color: white;
+    font-size: calc(1rem +1vw);
+    font-weight: 200;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 4rem;
+}
+
+i {
+    font-size: var(--font-size-title);
+    color: var(--col-sec);
+}
+
+
