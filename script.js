@@ -45,7 +45,7 @@ class Player {
 
   update() {
     this.aim = this.game.calcAim(this.game.planet, this.game.mouse)
-    this.x = this.game.planet.x + (this.game.planet.radius + this,radius) * this.aim[0]
+    this.x = this.game.planet.x + (this.game.planet.radius + this.radius) * this.aim[0]
     this.y = this.game.planet.y + (this.game.planet.radius + this.radius) * this.aim[1]
     this.angle = Math.atan2(this.aim[3], this.aim[2])
   }
