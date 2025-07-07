@@ -34,7 +34,13 @@ class Game {
       x: 0,
       y: 0
     } 
-
+    window.addEventListener('mousemove', e => {
+      this.mouse.x = e.offsetX
+      this.mouse.y = e.offsetY
+    })
+    window.addEventListener('keyup', e => {
+      if (e.key === 'd') this.debug = !this.debug
+    })
   }
 
   render(context) {
