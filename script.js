@@ -4,6 +4,20 @@ class Planet {
   }
 
   draw() {
-    
+
+  }
+}
+
+class Player {
+  constructor(game) {
+
+  }
+
+  draw(context) {
+
+  }
+
+  update() {
+
   }
 }
