@@ -32,6 +32,16 @@ class Game {
   }
 
   calcAim(a, b) {
-    
+
   }
 }
+
+window.addEventListener('load', function() {
+  const canvas = document.getElementById('canvas1')
+  const ctx = canvas.getContext('2d')
+  canvas.width = 800
+  canvas.height = 800
+  ctx.strokeStyle = '#fffcfa'
+  ctx.lineWidth = 2
+
+})
