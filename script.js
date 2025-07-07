@@ -20,7 +20,13 @@ class Planet {
 
 class Player {
   constructor(game) {
-
+    this.game = game
+    this.x = this.game.width * 0.5
+    this.y = this.game.height * 0.5
+    this.radius = 40
+    this.image = document.getElementById('player')
+    this.aim
+    this.angle = 0
   }
 
   draw(context) {
