@@ -77,7 +77,12 @@ class Game {
   }
 
   calcAim(a, b) {
-
+    const dx = a.x - b.x
+    const dy = a.y - b.y
+    const distance = Math.hypot(dx, dy)
+    const aimX = dx / distance * -1
+    const aimY = dy / distance * -1
+    return [aimX, aimY, dx, dy]
   }
 }
 
