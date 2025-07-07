@@ -24,6 +24,16 @@ class Player {
 
 class Game {
   constructor(canvas) {
+    this.canvas = canvas
+    this.width = this.canvas.width
+    this.height = this.canvas.height
+    this.planet = new Planet(this)
+    this.player = new Player(this)
+    this.debug = true
+    this.mouse = {
+      x: 0,
+      y: 0
+    } 
 
   }
 
