@@ -44,7 +44,7 @@ class Player {
   }
 
   update() {
-
+  
   }
 }
 
@@ -70,7 +70,10 @@ class Game {
   }
 
   render(context) {
-
+    this.planet.draw(context)
+    this.player.draw(context)
+    this.player.update()
+    context.beginPath()
   }
 
   calcAim(a, b) {
