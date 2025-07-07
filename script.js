@@ -30,7 +30,17 @@ class Player {
   }
 
   draw(context) {
+    context.save()
+    context.translate(this.x, this.y)
+    context.rotate(this.angle)
+    context.drawImage(this.image, -this.radius, -this.radius)
 
+    if (this.game.debug) {
+      context.beginPath()
+      context.arc(0, 0, this.radius, 0, Math.PI * 2)
+      context.stroke()
+    }
+    context.restore()
   }
 
   update() {
