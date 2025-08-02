@@ -143,6 +143,12 @@ class Enemy {
   hit(damage) {
     this.lives -= damage
   }
+
+  draw(context) {
+    if (!this.free) {
+      context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x - this.radius, this.y - this.radius, this.width, this.height)
+    }
+  }
 }
 
 class Game {
