@@ -258,8 +258,13 @@ class Game {
       if (enemy) enemy.start()
     }
 
-
-    context.beginPath()
+    if (this.spriteTimer < this.spriteInterval) {
+      this.spriteTimer += deltaTime
+      this.spriteUpdate = false
+    } else {
+      this.spriteTimer = 0
+      this.spriteUpdate = true
+    }
   }
 
   calcAim(a, b) {
