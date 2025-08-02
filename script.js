@@ -67,6 +67,14 @@ class Projectile {
     this.speedModifier = 5
     this.free = true
   }
+
+  start(x, y, speedX, speedY) {
+    this.free = false
+    this.x = x    
+    this.y = y
+    this.speedX = speedX * this.speedModifier
+    this.speedY = speedY * this.speedModifier
+  }
 }
 
 class Game {
