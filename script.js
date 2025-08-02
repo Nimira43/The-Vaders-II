@@ -105,18 +105,6 @@ class Projectile {
   }
 }
 
-class Asteroid extends Enemy {
-  constructor(game) {
-    super(game)
-    this.image = document.getElementById('asteroid')
-    this.frameX = 0
-    this.frameY = Math.floor(Math.random() * 4)
-    this.maxFrames = 7
-    this.lives = 5
-    this.maxLives = this.lives
-  }
-}
-
 class Enemy {
   constructor(game) {
     this.game = game
@@ -190,9 +178,21 @@ class Enemy {
       if (this.lives < 1 && this.game.spriteUpdate) {
         this.frameX++
       }
-      if (this.FrameX > this.maxFrame) this.reset()
+      if (this.frameX > this.maxFrame) this.reset()
     }
   } 
+}
+
+class Asteroid extends Enemy {
+  constructor(game) {
+    super(game)
+    this.image = document.getElementById('asteroid')
+    this.frameX = 0
+    this.frameY = Math.floor(Math.random() * 4)
+    this.maxFrames = 7
+    this.lives = 5
+    this.maxLives = this.lives
+  }
 }
 
 class Game {
@@ -203,6 +203,11 @@ class Game {
     this.planet = new Planet(this)
     this.player = new Player(this)
     this.debug = true
+
+    this.projectilePool = []
+    this.numberOfProjectiles = 20
+    // this.createProjectilePool() 
+
     this.mouse = {
       x: 0,
       y: 0
@@ -231,6 +236,13 @@ class Game {
     const aimY = dy / distance * -1
     return [aimX, aimY, dx, dy]
   }
+
+  checkCollision() {}
+  createProjectilePool() {}
+  getProjectile() {}
+  createEnemyPool(){}
+  getEnemy() {}
+
 }
 
 window.addEventListener('load', function() {
