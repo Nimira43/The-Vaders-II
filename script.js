@@ -147,6 +147,12 @@ class Enemy {
   draw(context) {
     if (!this.free) {
       context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x - this.radius, this.y - this.radius, this.width, this.height)
+      if (this.game.debug) {
+        context.beginPath() 
+        context.arc(this.x, this.y, this.radius, 0, Math.PI * 2) 
+        context.stroke() 
+        context.fillText(this.lives, this.x, this.y) 
+      }
     }
   }
 }
