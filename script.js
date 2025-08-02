@@ -105,6 +105,20 @@ class Projectile {
   }
 }
 
+class Enemy {
+  constructor(game) {
+    this.game = game
+    this.x = 0
+    this.y = 0
+    this.radius = 40
+    this.width = this.radius * 2
+    this.height = this.radius * 2
+    this.speedX = 0
+    this.speedY = 0
+    this.free = true
+  }
+}
+
 class Game {
   constructor(canvas) {
     this.canvas = canvas
