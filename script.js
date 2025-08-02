@@ -160,12 +160,25 @@ class Enemy {
     if (!this.free) {
       this.x += this.speedX
       this.y += this.speedY
+      
       if (this.game.checkCollision(this, this.game.planet)) {
         this.reset()
       }
+      
       if (this.game.checkCollision(this, this.game.player)) {
         this.reset()
       }
+
+      this.game.projectilePool.forEach(projectile => {
+        if (!projectile.free && this.game.checkCollision(this, projectile) && this.lives >= 1) {
+          projectile.reset()
+          this.hit(1)
+        }
+      })
+      if (this.lives < 1 && this.game.spriteUpdate) {
+        this.frameX++
+      }
+      if (this.FrameX > this.maxFrame) this.reset()
     }
   } 
 }
