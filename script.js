@@ -295,8 +295,12 @@ class Game {
       if (this.projectilePool[i].free) return this.projectilePool[i]
     }
   }
-  
-  createEnemyPool(){}
+
+  createEnemyPool(){
+    for (let i = 0; i < this.numberOfEnemies; i++) {
+      this.enemyPool.push(new Asteroid(this))
+    }   
+  }
   getEnemy() {}
 
 }
