@@ -155,6 +155,14 @@ class Enemy {
       }
     }
   }
+
+ update() {
+  if (!this.free) {
+    this.x += this.speedX
+    this.y += this.speedY
+    
+  }
+ } 
 }
 
 class Game {
