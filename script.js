@@ -241,6 +241,10 @@ class Game {
     this.planet.draw(context)
     this.player.draw(context)
     this.player.update()
+    this.projectilePool.forEach(projectile => {
+      projectile.draw(context) 
+      projectile.update()
+    })
     context.beginPath()
   }
 
