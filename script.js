@@ -290,8 +290,12 @@ class Game {
     }
   }
 
-
-  getProjectile() {}
+  getProjectile() {
+    for (let i = 0; i < this.projectilePool.length; i++) {
+      if (this.projectilePool[i].free) return this.projectilePool[i]
+    }
+  }
+  
   createEnemyPool(){}
   getEnemy() {}
 
