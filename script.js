@@ -56,6 +56,19 @@ class Player {
   }
 }
 
+class Projectile {
+  constructor(game) {
+    this.game = game
+    this.x
+    this.y
+    this.radius = 5
+    this.speedX = 1
+    this.speedY = 1
+    this.speedModifier = 5
+    this.free = true
+  }
+}
+
 class Game {
   constructor(canvas) {
     this.canvas = canvas
