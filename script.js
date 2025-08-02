@@ -79,6 +79,17 @@ class Projectile {
   reset() {
     this.free = true
   }
+
+  draw(context) {
+    if (!this.free) {
+      context.save()
+      context.beginPath()
+      context.arc(this.x, this.y, this.radius, 9, Math.PI * 2)
+      context.fillStyle = '#ffd700'
+      context.fill()
+      context.restore()
+    }
+  }
 }
 
 class Game {
