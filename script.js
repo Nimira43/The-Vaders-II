@@ -75,6 +75,10 @@ class Projectile {
     this.speedX = speedX * this.speedModifier
     this.speedY = speedY * this.speedModifier
   }
+
+  reset() {
+    this.free = true
+  }
 }
 
 class Game {
