@@ -284,9 +284,13 @@ class Game {
     return distance < sumOfRadii
   }
 
+  createProjectilePool() {
+    for (let i = 0; i < this.numberOfProjectiles; i++) {
+      this.projectilePool.push(new Projectile(this))
+    }
+  }
 
 
-  createProjectilePool() {}
   getProjectile() {}
   createEnemyPool(){}
   getEnemy() {}
