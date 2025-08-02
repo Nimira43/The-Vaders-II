@@ -237,7 +237,7 @@ class Game {
     })
   }
 
-  render(context) {
+  render(context, deltaTime) {
     this.planet.draw(context)
     this.player.draw(context)
     this.player.update()
@@ -252,6 +252,7 @@ class Game {
 
     if (this.enemyTimer < this.enemyInterval) {
       this.enemyTimer += deltaTime
+      
     }
 
 
