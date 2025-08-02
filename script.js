@@ -49,6 +49,11 @@ class Player {
     this.y = this.game.planet.y + (this.game.planet.radius + this.radius) * this.aim[1]
     this.angle = Math.atan2(this.aim[3], this.aim[2])
   }
+
+  shoot() {
+    const projectile = this.game.getProjectile()
+    if (projectile) projectile.start(this.x + this.radius * this.aim[0], this.y + this.radius * this.aim[1], this.aim[0], this.aim[1])
+  }
 }
 
 class Game {
