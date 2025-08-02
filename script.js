@@ -135,6 +135,10 @@ class Enemy {
     this.speedX = aim[0]
     this.speedY = aim[1]
   }
+
+  reset() {
+    this.free = true
+  } 
 }
 
 class Game {
