@@ -139,6 +139,10 @@ class Enemy {
   reset() {
     this.free = true
   } 
+
+  hit(damage) {
+    this.lives -= damage
+  }
 }
 
 class Game {
