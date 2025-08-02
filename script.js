@@ -251,8 +251,11 @@ class Game {
     })
 
     if (this.enemyTimer < this.enemyInterval) {
-      this.enemyTimer += deltaTime
-      
+      this.enemyTimer += deltaTime 
+    } else {
+      this.enemyTimer = 0
+      const enemy = this.getEnemy()
+      if (enemy) enemy.start()
     }
 
 
