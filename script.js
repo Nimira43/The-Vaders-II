@@ -117,6 +117,18 @@ class Enemy {
     this.speedY = 0
     this.free = true
   }
+
+  start() {
+    this.free = false
+    this.frameX = 0
+    this.lives = this.maxLives
+    this.frameY = Math.floor(Math.random() * 4)
+
+    if (Math.random() < 0.5) {
+      this.x = Math.random() * this.game.width
+      this.y = Math.random() < 0.5 ? -this.radius : this.game.height + this.radius
+    }
+  }
 }
 
 class Game {
