@@ -216,8 +216,14 @@ class Game {
       this.mouse.x = e.offsetX
       this.mouse.y = e.offsetY
     })
+    window.addEventListener('mousedown', e => {
+      this.mouse.x = e.offsetX
+      this.mouse.y = e.offsetY
+      this.player.shoot()
+    })
     window.addEventListener('keyup', e => {
       if (e.key === 'd') this.debug = !this.debug
+      else if (e.key === '1') this.player.shoot()
     })
   }
 
@@ -237,7 +243,7 @@ class Game {
     return [aimX, aimY, dx, dy]
   }
 
-  checkCollision() {}
+  checkCollision(a, b) {}
   createProjectilePool() {}
   getProjectile() {}
   createEnemyPool(){}
