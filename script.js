@@ -206,7 +206,17 @@ class Game {
 
     this.projectilePool = []
     this.numberOfProjectiles = 20
-    // this.createProjectilePool() 
+    this.createProjectilePool()
+    
+    this.enemyPool = []
+    this.numberOfEnemies = 20
+    this.createEnemyPool()
+    this.enemyPool[0].start()
+    this.enemyTimer = 0
+    this.enemyInterval = 1700
+    this.spriteUpdate = false
+    this.spriteTimer = 0
+    this.spriteInterval = 150 
 
     this.mouse = {
       x: 0,
