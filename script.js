@@ -245,6 +245,16 @@ class Game {
       projectile.draw(context) 
       projectile.update()
     })
+    this.enemyPool.forEach(enemy => {
+      enemy.draw(context)
+      enemy.update()
+    })
+
+    if (this.enemyTimer < this.enemyInterval) {
+      this.enemyTimer += deltaTime
+    }
+
+
     context.beginPath()
   }
 
@@ -271,13 +281,20 @@ window.addEventListener('load', function() {
   canvas.width = 800
   canvas.height = 800
   ctx.strokeStyle = '#fffcfa'
+  ctx.fillStyle = '#fffcfa'
   ctx.lineWidth = 2
+  ctx.font = '50px Verdana'
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'middle' 
 
   const game = new Game(canvas)
 
-  function animate() {
+  let lastTime = 0
+  function animate(timeStamp) {
+    const deltaTime = timeStamp - lastTime
+    lastTime = timeStamp
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    game.render(ctx)
+    game.render(ctx, deltaTime)
     requestAnimationFrame(animate)
   }
   requestAnimationFrame(animate)
