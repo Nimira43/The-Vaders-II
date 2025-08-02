@@ -156,13 +156,18 @@ class Enemy {
     }
   }
 
- update() {
-  if (!this.free) {
-    this.x += this.speedX
-    this.y += this.speedY
-    
-  }
- } 
+  update() {
+    if (!this.free) {
+      this.x += this.speedX
+      this.y += this.speedY
+      if (this.game.checkCollision(this, this.game.planet)) {
+        this.reset()
+      }
+      if (this.game.checkCollision(this, this.game.player)) {
+        this.reset()
+      }
+    }
+  } 
 }
 
 class Game {
