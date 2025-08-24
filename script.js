@@ -334,7 +334,19 @@ class Game {
       context.fillRect(20 + 15 * i, 60, 10, 30)
     }
 
-    
+    if (this.gameOver) {
+      context.textAlign = 'center'
+      let message1
+      let message2
+
+      if (this.score >= this.winningScore) {
+        message1 = 'You Have Won'
+        message2 = 'You scored ' + this.score  
+      } else {
+        message1 = 'You Are Dead'
+        message2 = 'RIP'
+      }
+    }
   }
 
   calcAim(a, b) {
