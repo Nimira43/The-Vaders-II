@@ -152,13 +152,17 @@ class Enemy {
 
   draw(context) {
     if (!this.free) {
-      context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, this.x - this.radius, this.y - this.radius, this.width, this.height)
+      context.save()
+      context.translate(this.x, this.y)
+      context.rotate(this.angle)
+      context.drawImage(this.image, this.frameX * this.width, this.frameY * this.height, this.width, this.height, -this.radius, -this.radius, this.width, this.height)
       if (this.game.debug) {
         context.beginPath() 
-        context.arc(this.x, this.y, this.radius, 0, Math.PI * 2) 
+        context.arc(0, 0, this.radius, 0, Math.PI * 2) 
         context.stroke() 
-        context.fillText(this.lives, this.x, this.y) 
+        context.fillText(this.lives, 0, 0) 
       }
+      context.restore()
     }
   }
 
