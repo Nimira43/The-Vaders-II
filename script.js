@@ -346,7 +346,13 @@ class Game {
         message1 = 'You Are Dead'
         message2 = 'RIP'
       }
+
+      context.font = '100px Verdana'
+      context.fillText(message1, this.width * 0.5, 200)
+      context.font = '50px Verdana'
+      context.fillText(message2, this.width * 0.5, 550)
     }
+    context.restore()
   }
 
   calcAim(a, b) {
