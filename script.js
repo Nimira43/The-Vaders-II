@@ -202,7 +202,7 @@ class Game {
     this.height = this.canvas.height
     this.planet = new Planet(this)
     this.player = new Player(this)
-    this.debug = true
+    this.debug = false
 
     this.projectilePool = []
     this.numberOfProjectiles = 20
@@ -213,10 +213,13 @@ class Game {
     this.createEnemyPool()
     this.enemyPool[0].start()
     this.enemyTimer = 0
-    this.enemyInterval = 1700
+    this.enemyInterval = 1200
     this.spriteUpdate = false
     this.spriteTimer = 0
     this.spriteInterval = 150 
+    this.score = 0
+    this.winningScore = 50
+    this.lives = 10
 
     this.mouse = {
       x: 0,
@@ -237,7 +240,7 @@ class Game {
     })
   }
 
-  drawStatusText(context) {}
+  
 
   render(context, deltaTime) {
     this.planet.draw(context)
@@ -268,6 +271,8 @@ class Game {
       this.spriteUpdate = true
     }
   }
+
+  drawStatusText(context) {}
 
   calcAim(a, b) {
     const dx = a.x - b.x
