@@ -324,7 +324,14 @@ class Game {
     }
   }
 
-  drawStatusText(context) {}
+  drawStatusText(context) {
+    context.save()
+    context.textAlign = 'left'
+    context.font = '30px Verdana'
+    context.fillText('Score: ' + this.score, 20, 30)
+
+    
+  }
 
   calcAim(a, b) {
     const dx = a.x - b.x
