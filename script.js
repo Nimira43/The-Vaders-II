@@ -237,6 +237,8 @@ class Game {
     })
   }
 
+  drawStatusText(context) {}
+
   render(context, deltaTime) {
     this.planet.draw(context)
     this.player.draw(context)
