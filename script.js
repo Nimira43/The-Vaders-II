@@ -179,8 +179,10 @@ class Enemy {
         this.game.lives--
       }
       
-      if (this.game.checkCollision(this, this.game.player)) {
-        this.reset()
+      if (this.game.checkCollision(this, this.game.player) && this.lives >= 1) {
+        this.lives = 0
+        this.collided = true
+        this.game.lives--
       }
 
       this.game.projectilePool.forEach(projectile => {
