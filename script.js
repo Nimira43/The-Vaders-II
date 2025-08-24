@@ -298,7 +298,16 @@ class Game {
 
   createEnemyPool(){
     for (let i = 0; i < this.numberOfEnemies; i++) {
-      this.enemyPool.push(new Asteroid(this))
+      let randomNumber = Math.random()
+      if (randomNumber < 0.25) {
+        this.enemyPool.push(new Asteroid(this))
+      } else if (randomNumber < 0.5) {
+        this.enemyPool.push(new Beetlemorph(this))
+      } else if (randomNumber < 0.75) {
+        this.enemyPool.push(new Rhinomorph(this))
+      } else {
+        this.enemyPool.push(new Lobstermorph(this))
+      }
     }   
   }
   
