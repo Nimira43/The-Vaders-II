@@ -194,7 +194,10 @@ class Enemy {
       if (this.lives < 1 && this.game.spriteUpdate) {
         this.frameX++
       }
-      if (this.frameX > this.maxFrame) this.reset()
+      if (this.frameX > this.maxFrame) {
+        this.reset()
+        if (!this.collided & !this.game.gameOver) this.game.score += this.maxLives 
+      }
     }
   } 
 }
