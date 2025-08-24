@@ -115,6 +115,9 @@ class Enemy {
     this.height = this.radius * 2
     this.speedX = 0
     this.speedY = 0
+    this.speedModifier = Math.random() * 0.7 + 0.1
+    this.angle = 0
+    this.collided = false
     this.free = true
   }
 
