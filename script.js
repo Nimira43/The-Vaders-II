@@ -123,6 +123,7 @@ class Enemy {
 
   start() {
     this.free = false
+    this.collided = false
     this.frameX = 0
     this.lives = this.maxLives
     this.frameY = Math.floor(Math.random() * 4)
@@ -131,12 +132,13 @@ class Enemy {
       this.x = Math.random() * this.game.width
       this.y = Math.random() < 0.5 ? -this.radius : this.game.height + this.radius
     } else {
-      this.x = Math.random() < 0.5 ? -this.radius : this.game.width + this.game.radius 
+      this.x = Math.random() < 0.5 ? -this.radius : this.game.width + this.radius 
       this.y = Math.random() * this.game.height
     }
     const aim = this.game.calcAim(this, this.game.planet)
-    this.speedX = aim[0]
-    this.speedY = aim[1]
+    this.speedX = aim[0] * this.speedModifier
+    this.speedY = aim[1] * this.speedModifier
+    this.angle = Math.atan2(aim[3], aim[2]) + Math.PI * 0.5
   }
 
   reset() {
