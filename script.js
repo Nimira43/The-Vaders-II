@@ -194,6 +194,39 @@ class Asteroid extends Enemy {
     this.maxLives = this.lives
   }
 }
+class Lobstermorph extends Enemy {
+  constructor(game) {
+    super(game)
+    this.image = document.getElementById('lobstermorph')
+    this.frameX = 0
+    this.frameY = Math.floor(Math.random() * 4)
+    this.maxFrames = 14
+    this.lives = 8
+    this.maxLives = this.lives
+  }
+}
+class Beetlemorph extends Enemy {
+  constructor(game) {
+    super(game)
+    this.image = document.getElementById('beetlemorph')
+    this.frameX = 0
+    this.frameY = Math.floor(Math.random() * 4)
+    this.maxFrames = 3
+    this.lives = 1
+    this.maxLives = this.lives
+  }
+}
+class Rhinomorph extends Enemy {
+  constructor(game) {
+    super(game)
+    this.image = document.getElementById('rhinomorph')
+    this.frameX = 0
+    this.frameY = Math.floor(Math.random() * 4)
+    this.maxFrames = 6
+    this.lives = 4
+    this.maxLives = this.lives
+  }
+}
 
 class Game {
   constructor(canvas) {
